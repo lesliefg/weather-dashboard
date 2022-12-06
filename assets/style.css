@@ -46,8 +46,39 @@
 }
 
 .scroll {
+    min-height:150px;
     max-height: 150px;
     overflow-y: auto;
+}
+
+
+.weather {
+    margin-left: 410px;
+}
+
+.custombox,
+.customBanner {
+    width: 200px;
+    height: 175px;
+    margin: 5px;
+    list-style: none;
+    color: var(--main-text);
+    background-color: #255da2;
+    border: 3px solid var(--borders);
+}
+
+.customBanner li {
+    margin-bottom: 3px;
+}
+
+#locationIcon {
+    display: inline-block;
+}
+
+#location,
+#icon {
+    font-size: 25px;
+    display: inline;
 }
 
 /*This is the styling for the footer/credits*/
