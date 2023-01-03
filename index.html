@@ -25,7 +25,7 @@
             <label class="text-light" for="citySearch">City Search</label>
             <input type="searchCity" class="form-control" id="citySearch" placeholder="City Name">
             </div>
-            <button id="searchBtn" type="search" class="customButton">Search</button>
+            <button id="searchBtn" type="submit" class="customButton">Search</button>
             <button id="clearBtn" type="clear" class="customButton">Clear Search</button>
         </form>
 
@@ -39,9 +39,11 @@
             </ul>
           </div>
     </aside>
+<!--End of sidebar section-->
 
+<!-- This is our current weather section -->
     <main class="weather">
-        <div id="curentWeather" class="col-12">
+        <div id="currentWeather" class="col-12">
             <ul class="col customBanner">
                 <li id="locationIcon"><h1 id="location"></h1><div id="icon"><img id="wicon" alt="Weather icon"></div></li>
                 <li id="description"></li>
@@ -50,43 +52,16 @@
                 <li id="humidity"></li>
               </div> 
         </div>
+<!-- End of current weather sections -->
 
+<!-- Start of our 5 day forecast section -->
         <h2>5 Day Forecast</h2>
 
         <div id="weekWeather" class="d-flex align-content-end flex-wrap">
-            <!-- <div class="col custombox">
-              <div id="description"></div>
-              <div id="temp"></div>
-              <div id="location"></div>
-            </div>
-
-            <div class="col custombox">
-              <div id="description"></div>
-              <div id="temp"></div>
-              <div id="location"></div>
-            </div>
-
-            <div class="col custombox">
-              <div id="description"></div>
-              <div id="temp"></div>
-              <div id="location"></div>
-            </div>
-
-            <div class="col custombox">
-              <div id="description"></div>
-              <div id="temp"></div>
-              <div id="location"></div>
-            </div>
-
-            <div class="col custombox">
-              <div id="description"></div>
-              <div id="temp"></div>
-              <div id="location"></div>
-            </div> -->
+            <!--5 day forecast boxes get rendered via JS-->
         </div>
     </main>
-    <!--End of sidebar section-->
-
+    <!-- End of our 5 day forecast section -->
     
     <!--This is our footer/credits-->
     <footer class="footer">
