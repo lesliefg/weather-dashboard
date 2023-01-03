@@ -1,4 +1,4 @@
-//===============Declared Variables===============
+//===============Declared Varibles===============
 var searchHistoryList = document.querySelector("#searchHistory");
 const searchButton = document.querySelector("#searchBtn");
 const clearButton = document.querySelector("#clearBtn");
