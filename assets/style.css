@@ -68,10 +68,15 @@
     text-align: center;
 }
 
+.hidden {
+    display: none;
+}
+
 .custombox,
 .customBanner {
     width: 200px;
-    height: 175px;
+    min-height: 175px;
+    height: auto;
     margin: 5px;
     list-style: none;
     color: var(--main-text);
