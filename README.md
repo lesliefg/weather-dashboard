@@ -18,17 +18,19 @@ A live dashboard with current weather forecast for the next five days for variou
 
 ## Credits
 
-- 
+- Weather API: [https://openweathermap.org/]
 
 ## License
 
 Please refer to the LICENSE in the repo.
 
 ## Features
+- Use search bar to lookup the weather in any city in the USA.
 - Dashboard with five day forecast for any city I select
 - HTML comments in <!--These brackets--> for better unstanding of each section 
 - CSS comments in /*These Brackets*/ for easier understanding the styling sections
 
 ## Screenshots of finished and deployed webpage
 - Deployed desktop webpage 
-![alt text](TBA)
+![alt text](/assets/images/no-city.png)
+![alt text](/assets/images/searched.png)
