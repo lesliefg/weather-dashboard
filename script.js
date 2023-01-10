@@ -1,4 +1,4 @@
-//===============Declared Varibles===============
+//===============Declared Variables===============
 var searchHistoryList = document.querySelector("#searchHistory");
 const searchButton = document.querySelector("#searchBtn");
 const clearButton = document.querySelector("#clearBtn");
@@ -18,7 +18,7 @@ searchButton.addEventListener('click', function() {
 clearButton.addEventListener('click', function() {
     localStorage.clear();
 })
-
+//This will react to any city button that is clicked to relook up that city information
 $(".card").on('click', function(event){
   event.preventDefault();
   document.getElementById("citySearch").value = event.target.id;
@@ -47,7 +47,7 @@ function addCity (n) {
     addedList.push(n);
     localStorage.setItem("cityList", JSON.stringify(addedList));
 };
-
+//Captures city input
 function saveCity () {
     var searchHistory ={
       city: cityInput.value,
@@ -60,7 +60,7 @@ function renderHistoryList () {
     searchHistoryList.innerHTML = "";
     var cityList = getCityList();  
     var recentCities = cityList.slice(0,10);
-    //This will increase the data index by 1 for each list item
+    //This will increase the data index by 1 for each list item and render each unique one
     for (var i = 0; i < recentCities.length; i++) {
         var item = recentCities[i];
         var list = document.createElement("button");
@@ -72,7 +72,7 @@ function renderHistoryList () {
     }
 };
 
-//Weather API fetch for current
+//Weather API fetch for current weather
 function getCurrent( lastCity ) {
     var getCity = getCityList();  
     var cityName = getCity.slice(-1).pop();
@@ -89,13 +89,13 @@ function getCurrent( lastCity ) {
       // catch any errors
     });
   };
-
+//Here we render the weather to the page. First the current weather
 function renderWeather( d ) {
   var fahrenheit = Math.round(((parseFloat(d.main.temp)-273.15)*1.8)+32); 
   var currentDate = dayjs().format('dddd, MMMM D, YYYY ');
   var iconCode = d.weather[0].icon;
   let weatherIcon = "https://openweathermap.org/img/w/" + iconCode + ".png";
-
+//This also hides our instrutions div
   document.getElementById('instructions').classList.add('hidden');
   document.getElementById('currentWeather').classList.remove('hidden');
   document.getElementById('location').innerHTML = d.name + ' (' + currentDate + ')';
@@ -105,7 +105,7 @@ function renderWeather( d ) {
   document.getElementById('wind').innerHTML = 'Wind: ' + d.wind.speed + 'mph';
   document.getElementById('humidity').innerHTML = 'Humidity: ' + d.main.humidity + '%';
 
-  // var cityFive = d.id;
+  // Here we fetch our 5 day forecast using lat and long coordinates 
   var geoLat = d.coord.lat;
   var geoLon = d.coord.lon;
   var fiveDayUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${geoLat}&lon=${geoLon}&exclude=minutely,hourly,alerts&appid=${apiKey}`;
@@ -114,6 +114,7 @@ function renderWeather( d ) {
   .then(function(response) { return response.json() }) // Convert data to json
     .then(function(data) {
       console.log(data);
+      //Then we increase the index by 1 and give it a max of 6 for 5 day forecast
       for (var i = 1; i < 6; i++) {
         var dateCode = data.daily[i].dt;
         var dailyDate = dayjs(dateCode * 1000).format('MM/DD/YYYY');
@@ -126,7 +127,7 @@ function renderWeather( d ) {
         // console.log(desc);
         // console.log(temp);
         // console.log(humid);
-
+        //Here we render each card and give it unique information
         var weekContainer = document.getElementById("weekWeather");
         var dailyCard = document.createElement("div");
         dailyCard.className = "col custombox";
