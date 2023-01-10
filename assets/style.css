@@ -1,8 +1,11 @@
+/*Universal coloring*/
 :root {
     --main-text: rgb(255, 255, 255);
     --borders: rgb(35, 19, 61);
     --buttons: rgba(12, 67, 122, 0.8);
 }
+
+/*Custom coloring for the navbar*/
 .navbar-custom {
     z-index: 1000;
     background: rgb(2,0,36);
@@ -23,7 +26,7 @@
     max-height: auto;
     text-align: center;
   }
-
+/*Custom button styling for the sidebar buttons*/
 .customButton { 
     display: block;
     width: 70%;
@@ -40,7 +43,7 @@
     background-color: var(--buttons);
     border: 3px solid var(--borders);
 }
-
+/*Custom hover effect on buttons*/
 .customButton:hover {
     background-color: var(--borders);
 }
@@ -48,12 +51,12 @@
 .cityResearch {
     cursor: pointer;
 }
-
+/*Hover effects for city search list*/
 .cityResearch:hover {
     color:rgb(35, 19, 61);
     background-color: #255da2;
 }
-
+/*This makes the recent list scrollable*/
 .scroll {
     min-height:150px;
     max-height: 150px;
@@ -71,7 +74,7 @@
 .hidden {
     display: none;
 }
-
+/*Styling for the weather cards*/
 .custombox,
 .customBanner {
     width: 200px;
